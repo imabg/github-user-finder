@@ -7,13 +7,13 @@ document.getElementById('searchUser').addEventListener('keyup', (e) => {
         github.getuser(text)
         .then(data => {
            if(data.profile.message === 'Not Found'){
-
+            ui.alertDanger('User not Found');
            } else{
             ui.showUser(data.profile);
            }
         });
     } else{
-    
+        ui.clearProfile();
     }
 
 })
